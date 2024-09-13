@@ -31,6 +31,31 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+#mode_edition {
+	display: none;
+	background-color: black;
+	color: white;
+	position: fixed;
+	width: 100%;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+#md_edition {
+	display: none;
+	vertical-align: middle;
+	font-weight: normal;
+	color: black;
+	font-size: 14px;
+	
+}
+#md_edition a {
+	text-decoration: none;
+	color: inherit;
+}
+
 ol, ul {
 	list-style: none;
 }
@@ -125,6 +150,27 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
+.filters {
+	display: flex;
+	justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+.category_filter {
+	background-color: white;
+	color: #35564A;
+	border: 2px solid #35564A;
+	border-radius: 30px;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-family: Arial, sans-serif;
+  }
+
+  .active_button {
+	background-color: #35564A;
+	color: white;
+  }
 .gallery {
 	width: 100%;
 	display: grid;
