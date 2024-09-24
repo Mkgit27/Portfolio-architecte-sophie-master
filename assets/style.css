@@ -231,3 +231,30 @@ footer nav ul {
 	margin: 2em
 }
 
+* {box-sizing: border-box;}
+#modal-wrapper {
+	width: 400px;
+	height: 450px;
+	position: absolute;
+	left: 500px;
+	display: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Style de base pour masquer la modale */
+  
+  /* Le contenu de la boîte modale */
+  .modal {
+	background-color: white;
+	border-radius: 10px; /* Bordures légèrement arrondies */
+	width: 600px; /* Largeur fixe */
+	max-width: 80vw; /* Ajuste la largeur sur les petits écrans */
+	max-height: 90vh; /* Limite la hauteur */
+	padding: 20px;
+	overflow-y: auto; /* Gère le défilement si le contenu dépasse */
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ombre douce */
+	position: relative; /* Pour positionner le bouton de fermeture */
+	z-index: 1001;
+  }

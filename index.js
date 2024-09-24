@@ -20,7 +20,11 @@ async function getWorks() {
           const img = document.createElement('img');
           img.src = work.imageUrl;
           figure.appendChild(img);
+          const modalContainer = document.getElementById("modal-wrapper")
 
+          img.addEventListener('click', () => {
+              modalContainer.style.display = 'block'
+          })
           const figCaption = document.createElement('figcaption');
           figCaption.textContent = work.title;
           figure.appendChild(figCaption);
