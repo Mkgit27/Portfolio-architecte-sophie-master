@@ -35,8 +35,9 @@ body {
 	display: none;
 	background-color: black;
 	color: white;
-	position: fixed;
+	position: relative;
 	width: 100%;
+	height: 30px;
 	text-align: center;
 	position: fixed;
 	top: 0;
@@ -49,7 +50,6 @@ body {
 	font-weight: normal;
 	color: black;
 	font-size: 14px;
-	
 }
 #md_edition a {
 	text-decoration: none;
@@ -233,10 +233,12 @@ footer nav ul {
 
 * {box-sizing: border-box;}
 #modal-wrapper {
-	width: 400px;
-	height: 450px;
+	width: 630px;
+	height: 688px;
 	position: absolute;
-	left: 500px;
+	left: 680px;
+	top: 520px;
+	border-radius: 10px;
 	display: none;
 	display: flex;
 	justify-content: center;
@@ -248,13 +250,341 @@ footer nav ul {
   /* Le contenu de la boîte modale */
   .modal {
 	background-color: white;
-	border-radius: 10px; /* Bordures légèrement arrondies */
-	width: 600px; /* Largeur fixe */
-	max-width: 80vw; /* Ajuste la largeur sur les petits écrans */
-	max-height: 90vh; /* Limite la hauteur */
+	border-radius: 10px; 
+	width: 600px; 
+	max-width: 80vw;  
+	max-height: 90vh; 
 	padding: 20px;
-	overflow-y: auto; /* Gère le défilement si le contenu dépasse */
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ombre douce */
-	position: relative; /* Pour positionner le bouton de fermeture */
-	z-index: 1001;
+	overflow-y: auto;  
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+	position: relative; 
+	z-index: 1;
   }
+
+  .title-modal {
+	font-family: Work Sans;
+	font-size: 26px;
+	font-weight: 400;
+	line-height: 30.5px;
+	text-align: center;
+	color: black;
+  }
+
+  #close-modal {
+	position: absolute; 
+	top: 10px;          
+	right: 10px;        
+	background: none;   
+	border: none;       
+	font-size: 16px;    
+	cursor: pointer;
+  }
+
+  #validate-button {
+	position: absolute;  
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%);
+	background-color: #1D6154;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+	padding-left: 80px;
+	padding-right: 80px;
+	border: none;
+    border-radius: 25px;
+    cursor: pointer;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  /* Modale */
+
+.modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    animation: fadeIn .3s both;
+}
+.modal-wrapper {
+    overflow: auto;
+    width: 700px;
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 20px);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    animation: slideFromTop .5s both;
+}
+
+.modal[aria-hidden="true"] {
+    animation-name: fadeOut;
+}
+
+.modal[aria-hidden="true"] .modal-wrapper {
+    animation-name: slideToBottom;
+}
+.js-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.js-modal-back {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#modal h3 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.modal-images {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.modal-result {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.modal-image {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 85%;
+}
+
+.fa-trash-can {
+    position: absolute;
+    top: 37px;
+    right: 6px;
+    z-index: 1;
+    color: white;
+    background-color: black;
+    font-size: 12px;
+    padding: 4px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Modale de confirmation */
+.confirmation-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.confirmation-modal.show {
+    display: flex;
+}
+
+.confirmation-content {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.confirmation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.confirmation-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#confirmYes {
+    background-color: #67ac6a;
+    color: white;
+}
+
+#confirmNo {
+    background-color: #f46d63;
+    color: white;
+}
+
+.separator-1 {
+
+    height: 2px;
+    background-color: #ccc;
+    margin: 80px 100px 50px;
+}
+
+#modal-gallery input[type="submit"] {
+    display: flex;
+    width: 40%;
+    padding: 10px;
+    margin-top: 0;
+    justify-content: center;
+    background-color: #1D6154;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+#modal-gallery input[type="submit"]:hover {
+    background-color: #14503B;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes slideFromTop {
+    from { transform: translateY(-50px); }
+    to { transform: translateY(0px); }
+}
+
+@keyframes slideToBottom {
+    from { transform: translateY(0px); }
+    to { transform: translateY(50px); }
+}
+
+.modal-add-work {
+    display: none;
+}
+
+.modal-add-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e6eef3;
+    border-radius: 5px;
+    margin: 35px 105px 0 105px;
+}
+
+#modal-form .modal-add-photo .preview-image {
+    max-width: 490px;
+    max-height: 185px;
+    object-fit: contain;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+    padding: 12px 33px;
+    color: #306685;
+    background-color: #cdd2d6;
+    border-radius: 50px;
+    font-size: 16px;
+}
+
+.custom-file-upload:hover {
+    background-color: #ddd;
+}
+
+
+#modal-form i {
+    padding-top: 20px;
+    font-size: 80px;
+    color: #B9C5CC;
+    padding-bottom: 10px;
+}
+
+#form-image {
+    opacity: 0;
+}
+
+#modal-form p {
+    font-size: 10px;
+    color: #929597;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+#modal-form .modal-label {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 105px 0 105px;
+}
+
+.modal-label input[type="text"], select {
+    height: 50px;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+    border: none;
+}
+
+.modal-label #form-title, .modal-label #category-input {
+    padding-left: 16px;
+    font-family: 'Work Sans';
+    background-color: white;
+}
+
+.modal-label label {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.separator-2 {
+    height: 2px;
+    background-color: #ccc;
+    margin: 60px 105px 40px;
+}
+
+.modal-add-work input[type="submit"] {
+    display: flex;
+    width: 40%;
+    padding: 10px;
+    margin-top: 0;
+    justify-content: center;
+    background-color: #a0a0a0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.active_button {
+    color: white;
+    background-color: #1D6154;
+}
+
+#valider.valid {
+    background-color: #1D6154;
+}
+
+#valider.valid:hover {
+    background-color: #14503B;
+}

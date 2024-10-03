@@ -1,7 +1,6 @@
 const gallery = document.querySelector(".gallery");
 console.log('gallery:',gallery);
 const filters = document.querySelector(".filters");
-
 // Les travaux
 
 async function getWorks() {
@@ -20,11 +19,7 @@ async function getWorks() {
           const img = document.createElement('img');
           img.src = work.imageUrl;
           figure.appendChild(img);
-          const modalContainer = document.getElementById("modal-wrapper")
-
-          img.addEventListener('click', () => {
-              modalContainer.style.display = 'block'
-          })
+        
           const figCaption = document.createElement('figcaption');
           figCaption.textContent = work.title;
           figure.appendChild(figCaption);
