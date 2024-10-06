@@ -588,3 +588,146 @@ footer nav ul {
 #valider.valid:hover {
     background-color: #14503B;
 }
+
+
+/* Login */
+
+/* Global Styles */
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: #FAF7ED; /* Couleur de fond */
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #FAF7ED;
+}
+
+header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 24px;
+    color: #A05D36; /* Couleur du logo texte */
+    margin: 0;
+}
+
+header span {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    font-size: 16px;
+    text-transform: lowercase;
+    color: #333;
+    cursor: pointer;
+}
+
+nav ul li:nth-child(3) {
+    font-weight: bold; /* Surligne l'élément "login" */
+}
+
+nav ul li img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px); /* Hauteur de la fenêtre moins la hauteur du header */
+}
+
+.login-container h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px;
+    color: #36544F; /* Couleur du texte "Log In" */
+    margin-bottom: 30px;
+}
+
+/* Form Styles */
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alignement à gauche pour les champs */
+    width: 300px;
+    gap: 20px; /* Espacement entre les champs */
+}
+
+#loginForm input[type="email"],
+#loginForm input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    font-size: 16px;
+    color: #333; /* Couleur du texte */
+}
+
+#loginForm input[type="email"]::placeholder,
+#loginForm input[type="password"]::placeholder {
+    color: #A5A5A5; /* Couleur du placeholder */
+}
+
+#loginForm input[type="submit"] {
+    width: 180px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px; /* Bordures arrondies */
+    background-color: #36544F; /* Couleur du bouton */
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 25px 0; /* Espace entre le bouton et les champs */
+    align-self: center; /* Aligne le bouton au centre */
+    transition: background-color 0.3s ease;
+}
+
+#loginForm input[type="submit"]:hover {
+    background-color: #2B433B; /* Changement de couleur au survol */
+}
+
+/* Labels Styles */
+#loginForm label {
+    font-size: 14px;
+    color: #333; /* Couleur des labels */
+    font-weight: bold;
+}
+
+/* Error Message Styles */
+#errorMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Additional Styling for Links */
+.login-container a {
+    color:black; /* Couleur du lien "Mot de passe oublié" */
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+
