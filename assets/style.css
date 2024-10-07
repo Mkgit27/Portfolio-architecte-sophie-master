@@ -116,11 +116,12 @@ nav ul {
 }
 nav li {
 	padding: 0 10px;
-	font-size: 1.2em;
+	font-size: 1.3em;
 }
 
 li:hover {
-	color: #B1663C;
+	color: black;
+    font-weight:bolder;
 }
 #introduction {
 	display: flex;
@@ -595,7 +596,8 @@ footer nav ul {
 /* Global Styles */
 body {
     font-family: 'Work Sans', sans-serif;
-    background-color: #FAF7ED; /* Couleur de fond */
+    background-color:#FFFEF8;
+    ; /* Couleur de fond */
 }
 
 /* Header Styling */
@@ -604,7 +606,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #FAF7ED;
+    background-color: #FFFEF8;
 }
 
 header h1 {
@@ -671,13 +673,13 @@ nav ul li img {
 
 #loginForm input[type="email"],
 #loginForm input[type="password"] {
-    width: 100%;
+    width: 320px;
     padding: 15px;
     border: none;
     background-color: #FFFFFF;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre légère */
     font-size: 16px;
-    color: #333; /* Couleur du texte */
+    color: black /* Couleur du texte */
 }
 
 #loginForm input[type="email"]::placeholder,
@@ -686,7 +688,7 @@ nav ul li img {
 }
 
 #loginForm input[type="submit"] {
-    width: 180px;
+    width: 200px;
     padding: 10px 20px;
     border: none;
     border-radius: 25px; /* Bordures arrondies */
@@ -731,3 +733,18 @@ nav ul li img {
 }
 
 
+.footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: right;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+/* Style du label "Mentions légales" */
+.legal-info {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+}
