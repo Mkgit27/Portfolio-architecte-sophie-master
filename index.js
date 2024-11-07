@@ -3,17 +3,17 @@ console.log('gallery:',gallery);
 const filters = document.querySelector(".filters");
 // Les travaux
 
-async function getWorks() {
+async function getWorks() { // async : marque une fonction comme asynchrone et retourne toujours une promesse
   try {
-      const response = await fetch("http://localhost:5678/api/works");
+      const response = await fetch("http://localhost:5678/api/works"); // await : attend la résolution d'une promesse à l'intérieur d'une fonction
       if (!response.ok) {
           throw new Error('Request failed!');
       }
       const works = await response.json();
-
+      console.log('works:',works);
       works.forEach(work => {
           const figure = document.createElement('figure');
-          figure.classList.add('result');
+          figure.classList.add('result'); // ajoute une class css 'result' à figure
           figure.id = work.categoryId;
 
           const img = document.createElement('img');

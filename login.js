@@ -31,9 +31,9 @@ form.addEventListener('submit', async (event) => {
         if (response.ok) {
             console.log("Authentification réussie");
             // Si la réponse est positive (status 200), traitement des données
-            const data = await response.json(); // asynchrone synchrone await ?
-            sessionStorage.setItem('token', data.token); // Stockage du token ?
-            sessionStorage.setItem('userId', data.userId); // Stockage de l'ID utilisateur ?
+            const data = await response.json();
+            sessionStorage.setItem('token', data.token); // Stockage du token : inspecter-application-storage-sessionStorage
+            sessionStorage.setItem('userId', data.userId); // Stockage de l'ID utilisateur 
             console.log("Token et userId stockés dans sessionStorage");
             window.location.href = './index.html'; // Redirection vers la page d'accueil
             console.log("Redirection vers la page d'accueil");

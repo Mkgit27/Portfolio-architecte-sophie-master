@@ -19,7 +19,7 @@ const openModal = (e) => {
     target.setAttribute('aria-modal', 'true');
     modal = target;
     openGalleryView();
-    modal.addEventListener('click', closeModal);
+    modal.addEventListener('click', closeModal); // la fonction close est appelée lorsque qu'on clique en dehors de la modal pour la fermer
     modal.querySelector('.js-modal-close').addEventListener('click', closeModal);
     modal.querySelector('.js-modal-stop').addEventListener('click', stopPropagation);
     populateModalWithImages();
@@ -33,7 +33,7 @@ const closeModal = (e) => {
         modal.style.display = 'none';
         modal = null;
     }, 500);
-    modal.setAttribute('aria-hidden', 'true');
+    modal.setAttribute('aria-hidden', 'true'); // cette modal est maintenant masquée et ne doit plus être interprétée
     modal.removeAttribute('aria-modal');
     modal.removeEventListener('click', closeModal);
     modal.querySelector('.js-modal-close').removeEventListener('click', closeModal);
@@ -130,7 +130,7 @@ confirmYes.addEventListener("click", async () => {
         const response = await fetch(`http://localhost:5678/api/works/${workIdToDelete}`, {
             method: "DELETE",
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${token}` // Le header Authorization contient le token récupéré plus tôt, ce qui authentifie la requête en prouvant que l'utilisateur est autorisé à effectuer cette action.
             }
         });
         if (!response.ok) throw new Error('La suppression a échoué.');
@@ -215,7 +215,7 @@ const handleSubmitNewProject = async (event) => {
             body: formData,
             headers: {
                 accept: "application/json",
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${token}`, // Le header Authorization contient le token récupéré plus tôt, ce qui authentifie la requête en prouvant que l'utilisateur est autorisé à effectuer cette action.
             },
         });
 
@@ -234,7 +234,7 @@ const handleSubmitNewProject = async (event) => {
 
 const updateValidateButtonState = () => {
     modalAddWork.appendChild(errorMessage);
-    if (imageInput.files.length > 0 && formTitleInput.value.trim() !== '' && formCategorySelect.value.trim() !== '') {
+    if (imageInput.files.length > 0 && formTitleInput.value.trim() !== '' && formCategorySelect.value.trim() !== '') { // si toutes les conditions sont valide, le bouton de validation peut être activer
         validateButton.classList.add('valid');
         validateButton.removeAttribute('disabled');
         errorMessage.textContent = '';
@@ -249,7 +249,7 @@ const updateValidateButtonState = () => {
 };
 
 const resetModalFields = () => {
-    imageInput.value = '';
+    imageInput.value = ''; // efface le champ de saisie pour télécharger l'image
     formTitleInput.value = '';
     formCategorySelect.selectedIndex = 0;
     validateButton.classList.remove('valid');
